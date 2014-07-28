@@ -1,12 +1,27 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <title>MyApp</title>
+<title>MyApp</title>
 
-    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
-    <script id="microloader" type="text/javascript" src="bootstrap.js"></script>
+<!-- The line below must be kept intact for Sencha Cmd to build your application -->
+<script id="microloader" type="text/javascript" src="bootstrap.js"></script>
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$.ajax({
+		type : "GET",
+		url : "web/api/novo",
+
+		success : function(data) {
+			console.log(data);
+		},
+		error : function(xhr, ajaxOptions, thrownError) {
+			alert(xhr.status);
+			alert(thrownError);
+		}
+	})
+</script>
 
 </head>
 <body></body>
